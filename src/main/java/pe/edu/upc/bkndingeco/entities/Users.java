@@ -31,14 +31,7 @@ public class Users implements Serializable {
     private String Nombres;
     @Column(name = "apellidos", length = 45, nullable = false)
     private String Apellidos;
-    @Column(name = "genero", length = 30, nullable = false)
-    private String Genero;
-    @Column(name = "direccion", length = 60, nullable = false)
-    private String Direccion;
-    @Column(name = "dni", length = 9, nullable = false)
-    private String DNI;
-    @Column(name = "celular", length = 10, nullable = false)
-    private String Celular;
+
 
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -93,37 +86,6 @@ public class Users implements Serializable {
         Apellidos = apellidos;
     }
 
-    public String getGenero() {
-        return Genero;
-    }
-
-    public void setGenero(String genero) {
-        Genero = genero;
-    }
-
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        Direccion = direccion;
-    }
-
-    public String getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
-    }
-
-    public String getCelular() {
-        return Celular;
-    }
-
-    public void setCelular(String celular) {
-        Celular = celular;
-    }
 
     public List<Role> getRoles() {
         return roles;

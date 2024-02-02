@@ -34,8 +34,4 @@ public class UsersServiceImplement implements IUsersService {
     }
 
 
-    @Override
-    public List<String[]> cantidad_usuarios_bygenero() {
-        return uR.cantidad_usuarios_bygenero();
-    }
 }

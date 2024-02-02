@@ -17,8 +17,5 @@ public interface UserRepository extends JpaRepository<Users,Long> {
     @Query("select count(u.username) from Users u where u.username =:username")
     public int buscarUsername(@Param("username") String nombre);
 
-    @Query(value = "SELECT u.genero, COUNT(u.id) AS Cantidad\n" +
-            " FROM users u\n" +
-            " GROUP BY genero",nativeQuery = true)
-    List<String[]> cantidad_usuarios_bygenero();
+
 }

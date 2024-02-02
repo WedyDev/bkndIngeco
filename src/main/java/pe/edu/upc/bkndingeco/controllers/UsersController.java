@@ -60,10 +60,6 @@ public class UsersController {
             usuarioExistente.setEnabled(dto.getEnabled());
             usuarioExistente.setNombres(dto.getNombres());
             usuarioExistente.setApellidos(dto.getApellidos());
-            usuarioExistente.setGenero(dto.getGenero());
-            usuarioExistente.setDireccion(dto.getDireccion());
-            usuarioExistente.setDNI(dto.getDNI());
-            usuarioExistente.setCelular(dto.getCelular());
             uS.insert(usuarioExistente);
         }
     }
