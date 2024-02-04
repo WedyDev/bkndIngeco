@@ -44,12 +44,6 @@ public class UsersController {
         uS.delete(id);
     }
 
-    /*@PutMapping
-    public void actualizar(@RequestBody UsersDTO dto){
-        ModelMapper m = new ModelMapper();
-        Users u=m.map(dto,Users.class);
-        uS.insert(u);
-    }*/
     @PutMapping("/{id}")
     public void actualizar(@PathVariable("id") Long id, @RequestBody UsersDTO dto) {
         Users usuarioExistente = uS.listarId(id);
