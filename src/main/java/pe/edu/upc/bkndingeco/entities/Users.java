@@ -29,6 +29,18 @@ public class Users implements Serializable {
     @JoinColumn(name = "userid")
     private List<Role> roles;
 
+    public List<Operation> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(List<Operation> operations) {
+        this.operations = operations;
+    }
+
+    @OneToMany
+    @JoinColumn(name = "userid")
+    private List<Operation> operations;
+
 
 
 
