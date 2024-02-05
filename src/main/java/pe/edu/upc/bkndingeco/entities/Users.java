@@ -3,16 +3,7 @@ package pe.edu.upc.bkndingeco.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -34,9 +25,12 @@ public class Users implements Serializable {
 
 
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @OneToMany
+    @JoinColumn(name = "userid")
     private List<Role> roles;
+
+
+
 
     public Long getId() {
         return id;
@@ -94,4 +88,5 @@ public class Users implements Serializable {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
 }
