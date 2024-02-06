@@ -12,31 +12,32 @@ public class Operation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "tipo_deposito",length = 60,nullable = true)
+    @Column(name = "tipo_deposito",length = 60,nullable = false)
     private String tipo_deposito;
-    @Column(name = "monto",nullable = true)
+    @Column(name = "monto",nullable = false)
 
     private Double monto;
-    @Column(name = "tipo_tasa",length = 60,nullable = true)
+    @Column(name = "tipo_tasa",length = 60,nullable = false)
 
     private String tipo_tasa;
-    @Column(name = "tipo_periodo",length = 60,nullable = true)
+    @Column(name = "tipo_periodo",length = 60,nullable = false)
 
     private String tipo_periodo;
-    @Column(name = "periodo" ,nullable = true)
+    @Column(name = "periodo" ,nullable = false)
 
     private Integer periodo;
-    @Column(name = "porcentaje_tasa" ,nullable = true)
+    @Column(name = "porcentaje_tasa" ,nullable = false)
 
     private Double porcentaje_tasa;
-    @Column(name = "capitalización" ,nullable = true)
+    @Column(name = "capitalización" ,nullable = false)
     private Integer capitalización;
-    @Column(name = "fecha_operacion" ,nullable = true)
+    @Column(name = "fecha_operacion" ,nullable = false)
 
     private LocalDate fecha_operacion;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", nullable=false)
     private Users users;
+
 
 
     public Long getId() {

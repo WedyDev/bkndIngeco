@@ -25,12 +25,12 @@ public class Users implements Serializable {
 
 
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "userid")
     private List<Role> roles;
 
     @OneToMany
-    @JoinColumn(name = "userid")
+    @JoinColumn(name = "user_id")
     private List<Operation> operations;
 
 
