@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.ManyToOne;
 @Entity
-@Table(name = "operation", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id" }) })
+@Table(name = "operation")
 public class Operation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
