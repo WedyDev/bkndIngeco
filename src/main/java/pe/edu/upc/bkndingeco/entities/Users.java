@@ -25,11 +25,18 @@ public class Users implements Serializable {
 
 
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "userid")
     private List<Role> roles;
 
+    @OneToMany
+    @JoinColumn(name = "userid")
+    private List<Operation> operations;
+
+
+
     public List<Operation> getOperations() {
+
         return operations;
     }
 
@@ -37,9 +44,7 @@ public class Users implements Serializable {
         this.operations = operations;
     }
 
-    @OneToMany
-    @JoinColumn(name = "userid")
-    private List<Operation> operations;
+
 
 
 
