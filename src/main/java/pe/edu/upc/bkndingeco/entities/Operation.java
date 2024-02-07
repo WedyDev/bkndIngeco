@@ -29,8 +29,10 @@ public class Operation implements Serializable {
     @Column(name = "porcentaje_tasa" ,nullable = false)
 
     private Double porcentaje_tasa;
-    @Column(name = "capitalización" ,nullable = false)
-    private Integer capitalización;
+
+
+    @Column(name = "capitalizacion" ,nullable = false)
+    private Integer capitalizacion;
     @Column(name = "fecha_operacion" ,nullable = false)
 
     private LocalDate fecha_operacion;
@@ -87,6 +89,14 @@ public class Operation implements Serializable {
     public void setPeriodo(Integer periodo) {
         this.periodo = periodo;
     }
+    public Integer getCapitalizacion() {
+        return capitalizacion;
+    }
+
+    public void setCapitalizacion(Integer capitalizacion) {
+        this.capitalizacion = capitalizacion;
+    }
+
 
     public Double getPorcentaje_tasa() {
         return porcentaje_tasa;
@@ -96,13 +106,7 @@ public class Operation implements Serializable {
         this.porcentaje_tasa = porcentaje_tasa;
     }
 
-    public Integer getCapitalización() {
-        return capitalización;
-    }
 
-    public void setCapitalización(Integer capitalización) {
-        this.capitalización = capitalización;
-    }
 
     public LocalDate getFecha_operacion() {
         return fecha_operacion;

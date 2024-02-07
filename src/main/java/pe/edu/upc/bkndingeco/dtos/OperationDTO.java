@@ -19,7 +19,8 @@ public class OperationDTO {
     private Integer periodo;
 
     private Double porcentaje_tasa;
-    private Integer capitalización;
+    private Integer capitalizacion;
+
 
     private LocalDate fecha_operacion;
     private UsersDTO users;
@@ -89,13 +90,14 @@ public class OperationDTO {
         this.porcentaje_tasa = porcentaje_tasa;
     }
 
-    public Integer getCapitalización() {
-        return capitalización;
+    public Integer getCapitalizacion() {
+        return capitalizacion;
     }
 
-    public void setCapitalización(Integer capitalización) {
-        this.capitalización = capitalización;
+    public void setCapitalizacion(Integer capitalizacion) {
+        this.capitalizacion = capitalizacion;
     }
+
 
     public LocalDate getFecha_operacion() {
         return fecha_operacion;
