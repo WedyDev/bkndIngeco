@@ -11,6 +11,6 @@ public interface IOperationService {
 
     public void delete(Long idOperation);
 
-    public Operation listId(Long idOperation);
+    List<Operation> listId(String  idOperation);
 
 }

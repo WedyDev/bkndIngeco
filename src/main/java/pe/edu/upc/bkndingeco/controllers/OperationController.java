@@ -37,10 +37,16 @@ public class OperationController {
     }
 
     @GetMapping("/{id}")
-    public OperationDTO listId(@PathVariable("id") Long id) {
-        ModelMapper m = new ModelMapper();
-        OperationDTO dto=m.map(ioS.listId(id),OperationDTO.class);
-        return dto;
+    public List<OperationDTO> listId(@PathVariable("id") String  id) {
+
+        return ioS.listId(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,OperationDTO.class);
+        }).collect(Collectors.toList());
+
+       // ModelMapper m = new ModelMapper();
+        //OperationDTO dto=m.map(ioS.listId(id),OperationDTO.class);
+        //return dto;
     }
 
     @DeleteMapping("/{id}")

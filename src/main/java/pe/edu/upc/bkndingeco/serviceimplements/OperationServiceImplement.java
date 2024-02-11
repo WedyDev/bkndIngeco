@@ -30,7 +30,7 @@ public class OperationServiceImplement implements IOperationService {
     }
 
     @Override
-    public Operation listId(Long idOperation) {
-        return oR.findById(idOperation).orElse(new Operation());
+    public List<Operation> listId(String username) {
+        return oR.buscarUsuario(username);
     }
 }
