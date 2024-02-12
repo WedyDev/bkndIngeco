@@ -37,16 +37,19 @@ public class OperationController {
     }
 
     @GetMapping("/{id}")
-    public List<OperationDTO> listId(@PathVariable("id") String  id) {
+    public OperationDTO listId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        OperationDTO dto=m.map(ioS.listId(id),OperationDTO.class);
+        return dto;
+    }
 
-        return ioS.listId(id).stream().map(x->{
+    @GetMapping("/username/{users}")
+    public List<OperationDTO> buscarUsuario(@PathVariable("users") String  users) {
+
+        return ioS.buscarUsuario(users).stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x,OperationDTO.class);
         }).collect(Collectors.toList());
-
-       // ModelMapper m = new ModelMapper();
-        //OperationDTO dto=m.map(ioS.listId(id),OperationDTO.class);
-        //return dto;
     }
 
     @DeleteMapping("/{id}")
