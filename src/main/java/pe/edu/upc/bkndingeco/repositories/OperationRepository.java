@@ -13,7 +13,7 @@ import java.util.List;
 public interface OperationRepository  extends JpaRepository<Operation,Long> {
     //@Query("SELECT o.id,o.capitalizacion,o.fecha_operacion,o.monto,o.periodo,o.porcentaje_tasa , o.tipo_deposito,o.tipo_periodo,o.tipo_tasa,o.users.id FROM Operation o where o.users.id=:user_id")
    // List<Operation> buscarUsuario(@Param("user_id") Long users);
-    @Query("SELECT o FROM Operation o where o.users.username=:username")
+    @Query("SELECT o FROM Operation o where o.users.username=:username order by o.id" )
     List<Operation> buscarUsuario(@Param("username") String users);
 
 }
