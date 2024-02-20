@@ -8,6 +8,16 @@ public class UsersDTO {
     private String Nombres;
     private String Apellidos;
 
+    public Integer getTipodeCambio() {
+        return TipodeCambio;
+    }
+
+    public void setTipodeCambio(Integer tipodeCambio) {
+        TipodeCambio = tipodeCambio;
+    }
+
+    private Integer TipodeCambio;
+
     public Long getId() {
         return id;
     }

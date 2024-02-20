@@ -49,11 +49,7 @@ public class UsersController {
         Users usuarioExistente = uS.listarId(id);
 
         if (usuarioExistente != null) {
-            usuarioExistente.setUsername(dto.getUsername());
-            usuarioExistente.setPassword(dto.getPassword());
-            usuarioExistente.setEnabled(dto.getEnabled());
-            usuarioExistente.setNombres(dto.getNombres());
-            usuarioExistente.setApellidos(dto.getApellidos());
+            usuarioExistente.setTipodeCambio(dto.getTipodeCambio());
             uS.insert(usuarioExistente);
         }
     }
