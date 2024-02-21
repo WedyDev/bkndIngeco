@@ -3,6 +3,7 @@ package pe.edu.upc.bkndingeco.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.bkndingeco.dtos.OperationDTO;
 import pe.edu.upc.bkndingeco.dtos.UsersDTO;
 import pe.edu.upc.bkndingeco.entities.Users;
 import pe.edu.upc.bkndingeco.serviceinterfaces.IUsersService;
@@ -54,10 +55,12 @@ public class UsersController {
         }
     }
 
+    @GetMapping("/username/{users}")
+    public UsersDTO findUsername(@PathVariable("users") String  users) {
 
-
-
-
-
+        ModelMapper m=new ModelMapper();
+        UsersDTO dto=m.map(uS.findByUsername(users),UsersDTO.class);
+        return dto;
+    }
 
 }
