@@ -33,5 +33,10 @@ public class UsersServiceImplement implements IUsersService {
         return uR.findById(id).orElse(new Users());
     }
 
+    @Override
+    public void UpdateTipodeCambio(String nombre) {
+        uR.UpdateTipodeCambio(nombre);
+    }
+
 
 }

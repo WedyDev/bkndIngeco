@@ -3,6 +3,7 @@ package pe.edu.upc.bkndingeco.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.bkndingeco.dtos.OperationDTO;
 import pe.edu.upc.bkndingeco.dtos.UsersDTO;
 import pe.edu.upc.bkndingeco.entities.Users;
 import pe.edu.upc.bkndingeco.serviceinterfaces.IUsersService;
@@ -44,15 +45,12 @@ public class UsersController {
         uS.delete(id);
     }
 
-    @PutMapping("/{id}")
-    public void actualizar(@PathVariable("id") Long id, @RequestBody UsersDTO dto) {
-        Users usuarioExistente = uS.listarId(id);
-
-        if (usuarioExistente != null) {
-            usuarioExistente.setTipodeCambio(dto.getTipodeCambio());
-            uS.insert(usuarioExistente);
-        }
+    @PutMapping("/{username}")
+    public void UpdateTipodeCambio(@PathVariable("username") String username) {
+        uS.UpdateTipodeCambio(username);
     }
+
+
 
 
 

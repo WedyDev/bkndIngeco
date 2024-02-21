@@ -5,6 +5,8 @@ public class UsersDTO {
     private String username;
     private String password;
     private Boolean enabled;
+    private Integer TipodeCambio;
+
     private String Nombres;
     private String Apellidos;
 
@@ -16,7 +18,6 @@ public class UsersDTO {
         TipodeCambio = tipodeCambio;
     }
 
-    private Integer TipodeCambio;
 
     public Long getId() {
         return id;
