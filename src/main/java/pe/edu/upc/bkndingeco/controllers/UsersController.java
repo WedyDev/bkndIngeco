@@ -3,6 +3,7 @@ package pe.edu.upc.bkndingeco.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.bkndingeco.dtos.OperationDTO;
 import pe.edu.upc.bkndingeco.dtos.UsersDTO;
 import pe.edu.upc.bkndingeco.entities.Users;
 import pe.edu.upc.bkndingeco.serviceinterfaces.IUsersService;
@@ -44,23 +45,18 @@ public class UsersController {
         uS.delete(id);
     }
 
-    @PutMapping("/{id}")
-    public void actualizar(@PathVariable("id") Long id, @RequestBody UsersDTO dto) {
-        Users usuarioExistente = uS.listarId(id);
-
-        if (usuarioExistente != null) {
-            usuarioExistente.setUsername(dto.getUsername());
-            usuarioExistente.setPassword(dto.getPassword());
-            usuarioExistente.setEnabled(dto.getEnabled());
-            usuarioExistente.setNombres(dto.getNombres());
-            usuarioExistente.setApellidos(dto.getApellidos());
-            uS.insert(usuarioExistente);
-        }
+    @PutMapping("/{username}")
+    public void UpdateTipodeCambio(@PathVariable("username") String username) {
+        uS.UpdateTipodeCambio(username);
     }
 
+    @GetMapping("/username/{users}")
+    public UsersDTO findUsername(@PathVariable("users") String  users) {
 
-
-
+        ModelMapper m=new ModelMapper();
+        UsersDTO dto=m.map(uS.findByUsername(users),UsersDTO.class);
+        return dto;
+    }
 
 
 

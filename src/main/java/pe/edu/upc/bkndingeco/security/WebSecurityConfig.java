@@ -58,6 +58,8 @@ public class WebSecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/authenticate").permitAll() //.hasAuthority("ADMIN")
                 .antMatchers( "/users").permitAll()
+                .antMatchers( "/users/{username}").permitAll()
+                .antMatchers("/users/username/{users}").permitAll()
                 .antMatchers( "/roles").permitAll()
                 .antMatchers( "/roles/insrollog").permitAll()
                 .anyRequest().authenticated()

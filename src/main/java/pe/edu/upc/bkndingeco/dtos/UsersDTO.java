@@ -5,8 +5,19 @@ public class UsersDTO {
     private String username;
     private String password;
     private Boolean enabled;
+    private Integer TipodeCambio;
+
     private String Nombres;
     private String Apellidos;
+
+    public Integer getTipodeCambio() {
+        return TipodeCambio;
+    }
+
+    public void setTipodeCambio(Integer tipodeCambio) {
+        TipodeCambio = tipodeCambio;
+    }
+
 
     public Long getId() {
         return id;

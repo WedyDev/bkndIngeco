@@ -25,6 +25,10 @@ public class Users implements Serializable {
 
 
 
+    @Column(name = "tipodecambio", length = 1, nullable = false)
+    private Integer TipodeCambio=1;
+
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "userid")
     private List<Role> roles;
@@ -44,7 +48,13 @@ public class Users implements Serializable {
         this.operations = operations;
     }
 
+    public Integer getTipodeCambio() {
+        return TipodeCambio;
+    }
 
+    public void setTipodeCambio(Integer tipodeCambio) {
+        TipodeCambio = tipodeCambio;
+    }
 
 
 
