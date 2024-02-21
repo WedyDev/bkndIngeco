@@ -50,11 +50,13 @@ public class UsersController {
         uS.UpdateTipodeCambio(username);
     }
 
+    @GetMapping("/username/{users}")
+    public UsersDTO findUsername(@PathVariable("users") String  users) {
 
-
-
-
-
+        ModelMapper m=new ModelMapper();
+        UsersDTO dto=m.map(uS.findByUsername(users),UsersDTO.class);
+        return dto;
+    }
 
 
 

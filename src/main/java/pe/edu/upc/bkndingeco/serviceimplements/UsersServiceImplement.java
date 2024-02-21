@@ -2,6 +2,7 @@ package pe.edu.upc.bkndingeco.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.bkndingeco.entities.Operation;
 import pe.edu.upc.bkndingeco.entities.Users;
 import pe.edu.upc.bkndingeco.repositories.UserRepository;
 import pe.edu.upc.bkndingeco.serviceinterfaces.IUsersService;
@@ -36,6 +37,9 @@ public class UsersServiceImplement implements IUsersService {
     @Override
     public void UpdateTipodeCambio(String nombre) {
         uR.UpdateTipodeCambio(nombre);
+    }
+    public Users findByUsername(String username) {
+        return uR.findByUsername(username);
     }
 
 
